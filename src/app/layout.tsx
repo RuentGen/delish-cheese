@@ -30,10 +30,10 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
         <SessionProvider session={session}>
           <FontAwesomeProvider>
             <ReduxProvider>
+              <Navbar />
               {children}
             </ReduxProvider>
           </FontAwesomeProvider>

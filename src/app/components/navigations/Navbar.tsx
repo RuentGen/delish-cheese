@@ -1,42 +1,56 @@
-
+"use client"
 import Image from 'next/image'
 import React from 'react'
+import IconButton from '../Buttons/IconButton'
 
 const Navbar = () => {
+    const [showMenu, setShowMenu] = React.useState(false)
+
+    const handleButtonClick = () => {
+        setShowMenu(!showMenu)
+    }
     return (
-        <nav className=' fixed h-auto w-full p-5 bg-transparent'>
-            <div className="outer-container flex items-center justify-between ">
+        <nav className=' fixed h-auto w-full bg-transparent'>
+            <div className={`outer-container flex items-center justify-between p-5`}>
+                {/* CALL BUTTON */}
+                <IconButton className='block md:hidden' iconName="fa-phone" size={20} flip/>
                 <div className="inner-container w-full h-auto p-5">
-                    {/* CALL BUTTON */}
-                    <ul className='flex float-right'>
+                    {/* UL LIST */}
+                    <ul className='hidden md:flex float-right'>
                         <li className='mx-2 uppercase text-lg text-white'>About</li>
                         <li className='mx-2 uppercase text-lg text-white'>Menu</li>
                         <li className='mx-2 uppercase text-lg text-white'>Mega Menu</li>
                     </ul>
                 </div>
-                <div className="logo-container relative w-[500px] h-[90px] bg-gray-500 overflow-hidden">
-                    <Image className='absolute object-cover w-full h-full' width={100} height={50} alt='Delish Cheese Dough Logo' src="/logo.jpg" />
+                {/* LOGO */}
+                <div className="logo-container relative w-[600px] h-[80px] overflow-hidden">
+                    <Image className='absolute object-cover object-center w-full h-full' width={300} height={300} alt='Delish Cheese Dough Logo' src="/logo.jpg" priority/>
                 </div>
                 {/* BURGER BUTTON */}
                 <div className="inner-container w-full h-auto p-5">
-                    <ul className='flex float-left'>
+                    {/* UL LIST */}
+                    <ul className='hidden md:flex float-left'>
                         <li className='mx-2 uppercase text-lg text-white'>Shop</li>
                         <li className='mx-2 uppercase text-lg text-white'>Blog</li>
                         <li className='mx-2 uppercase text-lg text-white'>Contact</li>
                     </ul>
-                    <button type="button" className=" sm:block md:hidden" aria-controls="mobile-menu" aria-expanded="false">
-                        <span className="absolute -inset-0.5"></span>
-                        <span className="sr-only">Open main menu</span>
-
-                        <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                        </svg>
-
-                        <svg className="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
                 </div>
+                {/* BUTTON */}
+                <div onClick={handleButtonClick} className=" p-1 cursor-pointer sm:block md:hidden ">
+                   <span className={`ease-in-out duration-300 block h-[5px] w-[12.5px] rounded-full bg-white ${showMenu ? 'translate-x-[1px] translate-y-[1px] rotate-[45deg]' : 'my-1'}`}></span>
+                   <span className={`ease-in-out duration-300 block h-[5px] w-[25px] rounded-full bg-white ${showMenu ? 'rotate-[-45deg]' : 'my-1'}`}></span>
+                   <span className={`ease-in-out duration-300 block h-[5px] w-[12.5px] rounded-full bg-white translate-x-[10px] ${showMenu ? "translate-y-[-1px] rotate-[45deg]" : 'my-1'}`}></span>
+                </div>
+            </div>
+            <div className={`h-auto w-full md:hidden`}>
+                <ul className={`ease-in-out duration-300 overflow-hidden px-5 bg-white flex flex-col justify-evenly ${showMenu ? "h-[300px] " : "h-0"}`}>
+                    <li className='mx-2 my-3 uppercase text-xl font-bold'>About</li>
+                    <li className='mx-2 my-3 uppercase text-xl font-bold'>Menu</li>
+                    <li className='mx-2 my-3 uppercase text-xl font-bold'>Mega Menu</li>
+                    <li className='mx-2 my-3 uppercase text-xl font-bold'>Shop</li>
+                    <li className='mx-2 my-3 uppercase text-xl font-bold'>Blog</li>
+                    <li className='mx-2 my-3 uppercase text-xl font-bold'>Contact</li>
+                </ul>
             </div>
         </nav>
     )

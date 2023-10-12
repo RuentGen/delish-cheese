@@ -11,7 +11,7 @@ const config: Config = {
     extend: {
       colors: {
         "backgroundWhite": "#FFFFFF",
-        "colorPrimary": "#C22524",
+        "colorPrimary": "#C10B00",
         "colorPrimary1": "#4ed4c0",
         "colorSecondary": "#035ECF",
         "colorLightDark": "#8D8D99",
@@ -20,11 +20,11 @@ const config: Config = {
         'borderDark': '#d5d5d5',
       },
       screens: {
-        'sm': '640px',
-        // => @media (min-width: 640px) { ... }
+        'sm': '880px',
+        // => @media (min-width: 850px) { ... }
 
-        'md': '768px',
-        // => @media (min-width: 768px) { ... }
+        'md': '881px',
+        // => @media (min-width: 851px) { ... }
 
         'lg': '1024px',
         // => @media (min-width: 1024px) { ... }
