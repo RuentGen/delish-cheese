@@ -1,14 +1,17 @@
-import { Navbar, Sidebar } from '@/app/components'
+import { Footer, Navbar, Sidebar } from '@/app/components'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Lilita_One } from 'next/font/google'
 import { ReduxProvider } from '@/redux/provider'
 import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
 import { __DEV__ } from '@apollo/client/utilities/globals'
 import { getServerSession } from 'next-auth'
 import FontAwesomeProvider from './components/FontAwesomeProvider'
 import SessionProvider from './components/SessionProvider'
-const inter = Inter({ subsets: ['latin'] })
+const inter = Lilita_One({
+  subsets: ['latin'],
+  weight: '400'
+})
 
 export const metadata: Metadata = {
   title: 'Delish Cheese Dough | Pizza',
@@ -35,6 +38,7 @@ export default async function RootLayout({
             <ReduxProvider>
               <Navbar />
               {children}
+              <Footer />
             </ReduxProvider>
           </FontAwesomeProvider>
         </SessionProvider>

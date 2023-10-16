@@ -15,6 +15,8 @@ import LoginButton from "./Buttons/LoginButton";
 import InputText from "./Input/InputText";
 import UserRegisterForm from "./Forms/UserRegisterForm";
 import Navbar from "./navigations/Navbar";
+import Footer from "./footer/Footer";
+import ProductCard from "./Cards/ProductCard";
 
 export {
     Sidebar,
@@ -33,5 +35,7 @@ export {
     LoginButton,
     InputText,
     UserRegisterForm,
-    Navbar
+    Navbar,
+    Footer,
+    ProductCard,
 }

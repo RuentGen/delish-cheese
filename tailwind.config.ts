@@ -12,12 +12,14 @@ const config: Config = {
       colors: {
         "backgroundWhite": "#FFFFFF",
         "colorPrimary": "#C10B00",
-        "colorPrimary1": "#4ed4c0",
-        "colorSecondary": "#035ECF",
+        "colorSecondary": "#F2BD26",
         "colorLightDark": "#8D8D99",
         "colorDark": "#02a189",
 
         'borderDark': '#d5d5d5',
+        //Heading Color
+        "primaryTextColor": "#6C4143",
+        "secondaryTextColor": "#56423E"
       },
       screens: {
         'sm': '880px',
@@ -40,6 +42,12 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      letterSpacing: {
+        '1': '0',
+        '2': '0.025em',
+        '3': '0.05em',
+        '4': '0.1em',
+      }
     },
   },
   plugins: [

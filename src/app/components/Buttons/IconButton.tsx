@@ -5,6 +5,7 @@ interface IconButtonProps {
   iconName: string;
   size: number;
   flip?: boolean;
+  color: string
 }
 
 /**
@@ -16,11 +17,11 @@ interface IconButtonProps {
  * @return {JSX.Element} The rendered icon button component.
  */
 /** */
-const IconButton = ({ className, iconName, size, flip }: IconButtonProps) => {
+const IconButton = ({ className, iconName, size, flip, color }: IconButtonProps) => {
 
   return (
     <button className={className}>
-      <Icon iconName={iconName} size={size} flip={flip} />
+      <Icon iconName={iconName} size={size} flip={flip} color={color} />
     </button>
   );
 }
