@@ -8,7 +8,7 @@ import { __DEV__ } from '@apollo/client/utilities/globals'
 import { getServerSession } from 'next-auth'
 import FontAwesomeProvider from './components/FontAwesomeProvider'
 import SessionProvider from './components/SessionProvider'
-const inter = Lilita_One({
+const lilita = Lilita_One({
   subsets: ['latin'],
   weight: '400'
 })
@@ -32,7 +32,7 @@ export default async function RootLayout({
   const session = await getServerSession()
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={lilita.className}>
         <SessionProvider session={session}>
           <FontAwesomeProvider>
             <ReduxProvider>

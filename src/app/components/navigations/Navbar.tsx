@@ -58,12 +58,12 @@ const Navbar = () => {
             </div>
             <div className={`h-auto w-full md:hidden`}>
                 <ul className={`ease-in-out duration-300 overflow-hidden px-5 bg-white flex flex-col justify-evenly ${showMenu ? "h-[300px] " : "h-0"}`}>
-                    <li className='mx-2 my-3 uppercase text-xl font-bold'>About</li>
-                    <li className='mx-2 my-3 uppercase text-xl font-bold'>Menu</li>
-                    <li className='mx-2 my-3 uppercase text-xl font-bold'>Mega Menu</li>
-                    <li className='mx-2 my-3 uppercase text-xl font-bold'>Shop</li>
-                    <li className='mx-2 my-3 uppercase text-xl font-bold'>Blog</li>
-                    <li className='mx-2 my-3 uppercase text-xl font-bold'>Contact</li>
+                    <li className='text-primaryTextColor mx-2 my-3 uppercase text-xl font-bold'>About</li>
+                    <li className='text-primaryTextColor mx-2 my-3 uppercase text-xl font-bold'>Menu</li>
+                    <li className='text-primaryTextColor mx-2 my-3 uppercase text-xl font-bold'>Mega Menu</li>
+                    <li className='text-primaryTextColor mx-2 my-3 uppercase text-xl font-bold'>Shop</li>
+                    <li className='text-primaryTextColor mx-2 my-3 uppercase text-xl font-bold'>Blog</li>
+                    <li className='text-primaryTextColor mx-2 my-3 uppercase text-xl font-bold'>Contact</li>
                 </ul>
             </div>
         </nav>
