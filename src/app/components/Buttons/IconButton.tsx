@@ -5,7 +5,8 @@ interface IconButtonProps {
   iconName: string;
   size: number;
   flip?: boolean;
-  color: string
+  color?: string
+  onClick?: () => void
 }
 
 /**
@@ -17,12 +18,12 @@ interface IconButtonProps {
  * @return {JSX.Element} The rendered icon button component.
  */
 /** */
-const IconButton = ({ className, iconName, size, flip, color }: IconButtonProps) => {
+const IconButton = ({ className, iconName, size, flip, color, onClick }: IconButtonProps) => {
 
   return (
-    <button className={`flex items-center justify-center${className}`}>
+    <div className={`flex items-center justify-center${className}`} onClick={onClick}>
       <Icon iconName={iconName} size={size} flip={flip} color={color} />
-    </button>
+    </div>
   );
 }
 export default IconButton

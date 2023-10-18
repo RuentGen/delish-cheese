@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import aboutdata from '../data/aboutData.json'
-import { ProductCard } from './components'
+import { ProductCard, ProductMenu1 } from './components'
 import menusData from './../data/menuData.json'
 
 const page = async () => {
@@ -13,7 +13,7 @@ const page = async () => {
         <div className="inner-container w-full h-[100%] flex flex-col items-center justify-center pt-[9rem]">
           <h2 className=' relative top-[30px] md:top-[110px] text-[8rem] md:text-[17rem] font-extrabold text-white leading-none opacity-50'>PIZZA</h2>
           <div className="image-container w-full h-[80vh] z-10" >
-            <Image className='mr-auto ml-auto block' width={1000} height={100} alt='hero' src={"/hero-5-img.png"} priority />
+            <Image className='mr-auto ml-auto block w-auto h-auto' width={1000} height={100} alt='hero' src={"/hero-5-img.png"} priority />
           </div>
           <div className="wave h-auto w-full relative bottom-[-1px] md:bottom-[200px] py-[2rem]  lg:py-[5rem] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: 'url("/white-overlay-wave.png")' }}>
           </div>
@@ -54,25 +54,12 @@ const page = async () => {
       <section className='menu-section h-auto w-full flex flex-col items-center px-10'>
         <h2 className=' text-[3rem] text-primaryTextColor text-center mt-5 mb-2'>Our Original Recipe</h2>
         <p className='text-secondaryTextColor text-center'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis animi dignissimos reiciendis eveniet neque laboriosam tenetur?</p>
-
-        <div className='product-list-1 w-full h-auto mt-10 grid gap-5 grid-cols-1 md:grid-cols-4'>
-          {menusData.map((menu: { id: number, name: string, description: string, imagePath: string, price: number, ratings: number, isLiked: boolean }) => {
-            return (
-              <React.Fragment key={`menu-${menu.id}`}>
-                <ProductCard
-                  imagePath={menu.imagePath}
-                  name={menu.name}
-                  description={menu.description}
-                  price={menu.price}
-                  ratings={menu.ratings}
-                  isLiked={menu.isLiked}
-                />
-              </React.Fragment>
-            )
-          }).slice(0, 20)}
-        </div>
+        <ProductMenu1 />
       </section>
       {/* BANNER */}
+      <section className='h-[500px] w-full '>
+
+      </section>
       {/* MENU */}
     </div>
   )

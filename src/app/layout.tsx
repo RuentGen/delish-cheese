@@ -10,7 +10,10 @@ import FontAwesomeProvider from './components/FontAwesomeProvider'
 import SessionProvider from './components/SessionProvider'
 const lilita = Lilita_One({
   subsets: ['latin'],
-  weight: '400'
+  weight: '400',
+  preload: true,
+  adjustFontFallback: true
+
 })
 
 export const metadata: Metadata = {

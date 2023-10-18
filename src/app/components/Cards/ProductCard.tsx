@@ -3,49 +3,66 @@
 import React from 'react'
 import Image from 'next/image'
 import IconButton from '../Buttons/IconButton'
-import { TextIconButton } from '..'
+import { Icon, TextIconButton } from '..'
 
+type ProductCardProps = {
+  name: string,
+  description: string,
+  imagePath: string,
+  price: number,
+  ratings: number,
+  isLiked: boolean,
+  onClick: () => void
+}
 
+const ProductCard = ({ imagePath, name, description, price, ratings, isLiked, onClick }: ProductCardProps) => {
 
-const ProductCard = ({ imagePath, name, description, price, ratings, isLiked }: { name: string, description: string, imagePath: string, price: number, ratings: number, isLiked: boolean }) => {
+  const [onFocus, setOnFocus] = React.useState(false)
 
-    const [onFocus, setOnFocus] = React.useState(false)
-
-
-    return (
-        <div className='product-card w-full max-h-auto border border-1 rounded-lg' onMouseEnter={() => setOnFocus(!onFocus)} onMouseLeave={() => setOnFocus(!onFocus)}>
-            {/* Image */}
-            <div className="inner-container block w-[100%] h-[20rem] relative overflow-hidden rounded-tl-lg rounded-tr-lg">
-                <Image className={`w-auto h-auto absolute object-cover object-center duration-300 hover:scale-[2] hover:rotate-90`} src={imagePath} width={100} height={100} priority alt={name} />
-            </div>
-            {/* Ratings and Likes */}
-            <div className="ratings-likes-container w-full h-[50px] p-5 flex items-center justify-between">
-                {/* Ratings */}
-                <div className="rating">
-                    <input type="radio" name="rating-1" className="mask mask-star" />
-                    <input type="radio" name="rating-1" className="mask mask-star" />
-                    <input type="radio" name="rating-1" className="mask mask-star" />
-                    <input type="radio" name="rating-1" className="mask mask-star" />
-                    <input type="radio" name="rating-1" className="mask mask-star" />
-                </div>
-                {/* Likes */}
-                <IconButton className={`bg-red-200 text-colorPrimary`} iconName={isLiked ? "fas-regular fa-heart" : "fa-regular fa-heart"} size={25} color='' />
-            </div>
-            <div className="details-container p-5">
-                {/* Name */}
-                <h2 className='text-primaryTextColor h-[2rem] text-[1.5rem] font-[700] uppercase'>{name}</h2>
-                {/* Description */}
-                <p className='text-secondaryTextColor h-[5rem] font-thin my-1'>{description}</p>
-                {/* Price */}
-                <div className='bg-colorPrimary text-white p-5 rounded-lg flex'>
-                    {/* Price */}
-                    <h3>Php{price.toFixed(2)}</h3>
-                    {/* AddToCartBTN */}
-                    <TextIconButton style={{ padding: '1rem', }} icon={`fa-bag-shopping`} size={25} color='white' text={'Add to cart'} />
-                </div>
-            </div>
+  return (
+    <div className='product-card w-full max-h-auto border border-1 rounded-lg overflow-hidden' onMouseEnter={() => setOnFocus(!onFocus)} onMouseLeave={() => setOnFocus(!onFocus)}>
+      {/* Image */}
+      <div className="inner-container block w-[100%] h-[20rem] relative overflow-hidden rounded-tl-lg rounded-tr-lg">
+        <Image
+          src={imagePath}
+          width={100}
+          height={100}
+          alt={name}
+          priority
+          className={`w-auto h-auto absolute object-cover object-center duration-300 ${onFocus ? "scale-[2] rotate-90" : ""}`}
+        />
+      </div>
+      {/* Ratings and Likes */}
+      <div className="ratings-likes-container w-full h-[50px] p-5 flex items-center justify-between">
+        {/* Ratings */}
+        <div className="rating">
+          <input type="radio" name="rating-1" className="mask mask-star" />
+          <input type="radio" name="rating-1" className="mask mask-star" />
+          <input type="radio" name="rating-1" className="mask mask-star" />
+          <input type="radio" name="rating-1" className="mask mask-star" />
+          <input type="radio" name="rating-1" className="mask mask-star" />
         </div>
-    )
+        {/* Likes */}
+        <IconButton className={`bg-red-200 text-colorPrimary`} iconName={isLiked ? "fas-regular fa-heart" : "fa-regular fa-heart"} size={25} onClick={onClick} />
+      </div>
+      <div className="details-container p-5">
+        {/* Name */}
+        <h2 className='text-primaryTextColor h-[2rem] text-[1.5rem] font-[700] uppercase'>{name}</h2>
+        {/* Description */}
+        <p className='text-secondaryTextColor h-[5rem] font-thin my-1'>{description}</p>
+        {/* Price */}
+        <div className='text-primaryTextColor w-full py-5 rounded-lg flex items-center justify-between'>
+          {/* Price */}
+          <h3>Php {price.toFixed(2)}</h3>
+          {/* AddToCartBTN */}
+          <button className={`btn md:btn-md md:px-2 flex items-center justify-center bg-colorSecondary border-0 opacity-0 ease-in-out duration-500 translate-y-[100px] ${onFocus ? "translate-y-[0px] opacity-100" : ""}`}>
+            <Icon iconName="fa-solid fa-bag-shopping" size={20} color='primaryTextColor' />
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default ProductCard

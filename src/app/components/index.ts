@@ -17,7 +17,7 @@ import UserRegisterForm from "./Forms/UserRegisterForm";
 import Navbar from "./navigations/Navbar";
 import Footer from "./footer/Footer";
 import ProductCard from "./Cards/ProductCard";
-
+import ProductMenu1 from "./Menus/ProductMenu1";
 export {
     Sidebar,
     SearchBox,
@@ -38,4 +38,5 @@ export {
     Navbar,
     Footer,
     ProductCard,
+    ProductMenu1
 }
