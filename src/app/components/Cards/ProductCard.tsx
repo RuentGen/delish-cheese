@@ -3,7 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import IconButton from '../Buttons/IconButton'
-import { Icon, TextIconButton } from '..'
+import { Icon, Ratings, TextIconButton } from '..'
 
 type ProductCardProps = {
   name: string,
@@ -35,27 +35,21 @@ const ProductCard = ({ imagePath, name, description, price, ratings, isLiked, on
       {/* Ratings and Likes */}
       <div className="ratings-likes-container w-full h-[50px] p-5 flex items-center justify-between">
         {/* Ratings */}
-        <div className="rating">
-          <input type="radio" name="rating-1" className="mask mask-star" />
-          <input type="radio" name="rating-1" className="mask mask-star" />
-          <input type="radio" name="rating-1" className="mask mask-star" />
-          <input type="radio" name="rating-1" className="mask mask-star" />
-          <input type="radio" name="rating-1" className="mask mask-star" />
-        </div>
+        <Ratings />
         {/* Likes */}
         <IconButton className={`bg-red-200 text-colorPrimary`} iconName={isLiked ? "fas-regular fa-heart" : "fa-regular fa-heart"} size={25} onClick={onClick} />
       </div>
       <div className="details-container p-5">
         {/* Name */}
-        <h2 className='text-primaryTextColor h-[2rem] text-[1.5rem] font-[700] uppercase'>{name}</h2>
+        <h3 className='text-colorPrimary h-[2rem] text-[1.5rem] uppercase'>{name}</h3>
         {/* Description */}
-        <p className='text-secondaryTextColor h-[5rem] font-thin my-1'>{description}</p>
+        <p className='text-secondaryTextColor h-[3rem] my-1'>{description}</p>
         {/* Price */}
         <div className='text-primaryTextColor w-full py-5 rounded-lg flex items-center justify-between'>
           {/* Price */}
           <h3>Php {price.toFixed(2)}</h3>
           {/* AddToCartBTN */}
-          <button className={`btn md:btn-md md:px-2 flex items-center justify-center bg-colorSecondary border-0 opacity-0 ease-in-out duration-500 translate-y-[100px] ${onFocus ? "translate-y-[0px] opacity-100" : ""}`}>
+          <button className={`btn font-[100] md:btn-md md:px-2 flex items-center justify-center bg-colorPrimary text-white border-0 ease-in-out duration-500`}>
             <Icon iconName="fa-solid fa-bag-shopping" size={20} color='primaryTextColor' />
             Add to cart
           </button>

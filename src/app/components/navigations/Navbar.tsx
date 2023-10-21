@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import React, { SetStateAction } from 'react'
 import IconButton from '../Buttons/IconButton'
+import CartButton from '../Buttons/CartButton'
 
 const Navbar = () => {
     const [showMenu, setShowMenu] = React.useState(false)
@@ -31,7 +32,7 @@ const Navbar = () => {
                 <IconButton className='block md:hidden' iconName="fa-phone" size={20} color='white' flip />
                 <div className="inner-container w-full h-auto p-5">
                     {/* UL LIST */}
-                    <ul className='hidden md:flex float-right'>
+                    <ul className='hidden md:flex items-center justify-center float-right'>
                         <li className='mx-2 uppercase text-lg text-white'>About</li>
                         <li className='mx-2 uppercase text-lg text-white'>Menu</li>
                         <li className='mx-2 uppercase text-lg text-white'>Mega Menu</li>
@@ -43,10 +44,11 @@ const Navbar = () => {
                 </div>
                 <div className="inner-container w-full h-auto p-5">
                     {/* UL LIST */}
-                    <ul className='hidden md:flex float-left'>
+                    <ul className='hidden md:flex items-center justify-center float-left'>
                         <li className='mx-2 uppercase text-lg text-white'>Shop</li>
                         <li className='mx-2 uppercase text-lg text-white'>Blog</li>
                         <li className='mx-2 uppercase text-lg text-white'>Contact</li>
+                        <CartButton />
                     </ul>
                 </div>
                 {/* BUTTON */}

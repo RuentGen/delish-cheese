@@ -15,6 +15,7 @@ const config: Config = {
         "colorSecondary": "#F2BD26",
         "colorLightDark": "#8D8D99",
         "colorDark": "#02a189",
+        "semiDarkColor": "rgba(0, 0, 0, 0.90)",
 
         'borderDark': '#d5d5d5',
         //Heading Color

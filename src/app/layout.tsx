@@ -1,18 +1,18 @@
 import { Footer, Navbar, Sidebar } from '@/app/components'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Lilita_One } from 'next/font/google'
+import { Oswald } from 'next/font/google'
 import { ReduxProvider } from '@/redux/provider'
 import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
 import { __DEV__ } from '@apollo/client/utilities/globals'
 import { getServerSession } from 'next-auth'
 import FontAwesomeProvider from './components/FontAwesomeProvider'
 import SessionProvider from './components/SessionProvider'
-const lilita = Lilita_One({
+const oswald = Oswald({
   subsets: ['latin'],
-  weight: '400',
+  weight: '500',
   preload: true,
-  adjustFontFallback: true
+  adjustFontFallback: true,
 
 })
 
@@ -35,7 +35,7 @@ export default async function RootLayout({
   const session = await getServerSession()
   return (
     <html lang="en">
-      <body className={lilita.className}>
+      <body className={oswald.className}>
         <SessionProvider session={session}>
           <FontAwesomeProvider>
             <ReduxProvider>
