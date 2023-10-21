@@ -106,7 +106,17 @@ const page = async () => {
 
       </section>
       {/* GALLERY */}
+        <section className='gallery-section w-full h-auto'>
+          
+        </section>
       {/* TESTIMONIALS */}
+      <section className='testimonials-section w-full h-auto'>
+          
+      </section>
+      {/* NEWSLETTER */}
+      <section className='newsletter-section w-full h-auto'>
+          
+        </section>
       {/* CONTACT US */}
       <section className='contact-us h-auto w-full'>
         
