@@ -10,7 +10,7 @@ import FontAwesomeProvider from './components/FontAwesomeProvider'
 import SessionProvider from './components/SessionProvider'
 const oswald = Oswald({
   subsets: ['latin'],
-  weight: '500',
+  weight: '400',
   preload: true,
   adjustFontFallback: true,
 

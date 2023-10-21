@@ -3,19 +3,20 @@ import Image from 'next/image'
 import aboutdata from '../data/aboutData.json'
 import { ProductCard, ProductMenu1 } from './components'
 import menusData from './../data/menuData.json'
+import FeaturedMenu from './components/Menus/FeaturedMenu'
 
 const page = async () => {
 
   return (
-    <div className='h-auto w-full'>
+    <main className='h-auto w-full'>
       {/* MAIN SECTION */}
-      <section className='h-[75vh] md:h-[90vh] w-full bg-colorPrimar' style={{ backgroundImage: "url('/hero-5.jpg')" }}>
-        <div className="inner-container w-full h-[100%] flex flex-col items-center justify-center md:pt-[20rem]">
+      <section className='h-[60vh] md:h-[90vh] w-full bg-colorPrimar' style={{ backgroundImage: "url('/hero-5.jpg')" }}>
+        <div className="inner-container w-full h-full flex flex-col items-center justify-center pt-20 md:pt-[20rem]">
           <h2 className=' relative top-[30px] md:top-[70px] text-[8rem] md:text-[17rem] font-extrabold text-white leading-none opacity-50'>PIZZA</h2>
           <div className="image-container w-full h-[80vh] z-10" >
             <Image className='mr-auto ml-auto block w-auto h-auto' width={1000} height={100} alt='hero' src={"/hero-5-img.png"} priority />
           </div>
-          <div className="wave h-auto w-full relative bottom-[-1px] md:bottom-[280px] py-[2rem]  lg:py-[5rem] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: 'url("/white-overlay-wave.png")' }}>
+          <div className="wave h-auto w-full relative bottom-[-1px] md:bottom-[280px] lg:bottom-[165px] py-[2rem]  lg:py-[5rem] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: 'url("/white-overlay-wave.png")' }}>
           </div>
         </div>
       </section>
@@ -62,32 +63,55 @@ const page = async () => {
       </section>
       {/* BANNER */}
       <section className='h-auto w-full p-10'>
-        <div className="inner-container h-[300px] w-full flex flex-col md:flex-row gap-3">
-          <div className='left w-full md:w-[50%] h-full bg-red-300 p-10 rounded-md flex flex-col items-center justify-center'>
-            <h2 className='text-white text-[2.5rem] uppercase -tracking-3'>Carrers</h2>
-            <p>What to join our team?</p>
-            <button className='btn px-10 bg-colorPrimary text-white mt-5 rounded-none hover:bg-semiDarkColor hover::border-2'>
-              Learn More
-            </button>
+        <div className="inner-container h-auto w-full flex flex-col md:flex-row gap-3">
+          {/* LEFT */}
+          <div className="left-overlay w-full md:w-[50%] h-full bg-red-300 rounded-md bg-no-repeat bg-cover bg-center" style={{backgroundImage: "url('/images/banners/carrers.jpg')"}}>
+            <div className='left w-full h-full p-20 rounded-md flex flex-col items-center justify-center bg-overlay-6' >
+                <h2 className='text-white text-[2.5rem] uppercase -tracking-3'>Carrers</h2>
+                <p className='text-white'>What to join our team?</p>
+                <button className='btn px-10 bg-colorPrimary text-white mt-5 rounded-none hover:bg-overlay-9 hover::border-2'>
+                  Learn More
+                </button>
+            </div>
           </div>
-          <div className='middle w-full h-full bg-green-300 p-10 rounded-md flex flex-col items-center justify-center'>
-            <h2 className='text-white text-[2.5rem] uppercase -tracking-3'>Order Now</h2>
-            <p>What to join our team?</p>
-            <button className='btn px-10 bg-colorPrimary text-white mt-5 rounded-none hover:bg-semiDarkColor hover::border-2'>
-              Learn More
-            </button>
+         {/* MIDDLE */}
+          <div className="middle-overlay w-full md:w-[100%] h-full bg-red-300 rounded-md bg-no-repeat bg-cover bg-center" style={{backgroundImage: "url('/images/banners/order-now.jpg')"}}>
+            <div className='middle w-full h-full p-20 rounded-md flex flex-col items-center justify-center  bg-overlay-6'>
+                <h2 className='text-white text-[2.5rem] uppercase -tracking-3'>Order Now</h2>
+                <p className='text-white'>Enjoy Testo Burgers at home!</p>
+                <button className='btn px-10 bg-colorPrimary text-white mt-5 rounded-none hover:bg-overlay-9 hover::border-2'>
+                  Learn More
+                </button>
+              </div>
           </div>
-          <div className='right w-full md:w-[50%] h-full bg-blue-300 p-10 rounded-md flex flex-col items-center justify-center'>
-            <h2 className='text-white text-[2.5rem] uppercase -tracking-3'>Gift Cards</h2>
-            <p>What to join our team?</p>
-            <button className='btn px-10 bg-colorPrimary text-white mt-5 rounded-none hover:bg-semiDarkColor hover::border-2'>
-              Learn More
-            </button>
+          {/* RIGHT */}
+          <div className="right-overlay w-full md:w-[50%] h-full bg-red-300 rounded-md bg-no-repeat bg-cover bg-center" style={{backgroundImage: "url('/images/banners/gift-cards1.jpg')"}}>
+            <div className='right w-full h-full bg-red-300 p-20 rounded-md flex flex-col items-center justify-center bg-overlay-6'>
+                <h2 className='text-white text-[2.5rem] uppercase -tracking-3'>Gift Cards</h2>
+                <p className='text-white'>Give the gift of Yummy!</p>
+                <button className='btn px-10 bg-colorPrimary text-white mt-5 rounded-none hover:bg-overlay-9 hover::border-2'>
+                  Learn More
+                </button>
+              </div>
           </div>
+         
         </div>
       </section>
-      {/* MENU */}
-    </div>
+      {/* FEATURED SECTION */}
+      <section className='featured-section w-full h-auto'>
+        <FeaturedMenu />
+      </section>
+      {/* BLOG SECTION */}
+      <section className='blog-section w-full h-auto'>
+
+      </section>
+      {/* GALLERY */}
+      {/* TESTIMONIALS */}
+      {/* CONTACT US */}
+      <section className='contact-us h-auto w-full'>
+        
+      </section>
+    </main>
   )
 }
 

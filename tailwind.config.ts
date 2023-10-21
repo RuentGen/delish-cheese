@@ -15,7 +15,16 @@ const config: Config = {
         "colorSecondary": "#F2BD26",
         "colorLightDark": "#8D8D99",
         "colorDark": "#02a189",
-        "semiDarkColor": "rgba(0, 0, 0, 0.90)",
+
+        "overlay-9": "rgba(0, 0, 0, 0.9)",
+        "overlay-8": "rgba(0, 0, 0, 0.8)",
+        "overlay-7": "rgba(0, 0, 0, 0.7)",
+        "overlay-6": "rgba(0, 0, 0, 0.6)",
+        "overlay-5": "rgba(0, 0, 0, 0.5)",
+        "overlay-4": "rgba(0, 0, 0, 0.4)",
+        "overlay-3": "rgba(0, 0, 0, 0.3)",
+        "overlay-2": "rgba(0, 0, 0, 0.2)",
+        "overlay-1": "rgba(0, 0, 0, 0.1)",
 
         'borderDark': '#d5d5d5',
         //Heading Color

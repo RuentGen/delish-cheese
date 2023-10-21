@@ -35,7 +35,7 @@ const ProductCard = ({ imagePath, name, description, price, ratings, isLiked, on
       {/* Ratings and Likes */}
       <div className="ratings-likes-container w-full h-[50px] p-5 flex items-center justify-between">
         {/* Ratings */}
-        <Ratings />
+        <Ratings disabled={true} />
         {/* Likes */}
         <IconButton className={`bg-red-200 text-colorPrimary`} iconName={isLiked ? "fas-regular fa-heart" : "fa-regular fa-heart"} size={25} onClick={onClick} />
       </div>

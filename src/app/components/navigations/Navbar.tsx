@@ -27,10 +27,10 @@ const Navbar = () => {
 
     return (
         <nav className={`fixed h-auto w-full z-50 ${scrollPos > 0 ? "bg-colorPrimary" : "bg-transparent"}`}>
-            <div className={`outer-container flex items-center justify-between p-5`}>
+            <div className={`outer-container w-full h-[100px] flex items-center justify-between px-5 overflow-hidden`}>
                 {/* CALL BUTTON */}
                 <IconButton className='block md:hidden' iconName="fa-phone" size={20} color='white' flip />
-                <div className="inner-container w-full h-auto p-5">
+                <div className="inner-container w-[10%] md:w-[100%] h-auto md:p-5">
                     {/* UL LIST */}
                     <ul className='hidden md:flex items-center justify-center float-right'>
                         <li className='mx-2 uppercase text-lg text-white'>About</li>
@@ -39,10 +39,10 @@ const Navbar = () => {
                     </ul>
                 </div>
                 {/* LOGO */}
-                <div className="logo-container relative w-[600px] h-[80px] overflow-hidden">
-                    <Image className='absolute object-cover object-center w-full h-full' width={300} height={300} alt='Delish Cheese Dough Logo' src="/logo.png" priority />
+                <div className="logo-cotnainer w-[50%] h-auto md:h-[110px] flex justify-center overflow-hidden">
+                    <Image className='w-auto h-auto' src={'/logo.png'} width={100} height={100} alt='logo' priority={true}/>
                 </div>
-                <div className="inner-container w-full h-auto p-5">
+                <div className="inner-container w-[10%] md:w-[100%] h-auto md:p-5">
                     {/* UL LIST */}
                     <ul className='hidden md:flex items-center justify-center float-left'>
                         <li className='mx-2 uppercase text-lg text-white'>Shop</li>
@@ -52,14 +52,15 @@ const Navbar = () => {
                     </ul>
                 </div>
                 {/* BUTTON */}
-                <div onClick={handleButtonClick} className=" p-1 cursor-pointer sm:block md:hidden ">
+                <div onClick={handleButtonClick} className="p-1 cursor-pointer sm:block md:hidden ">
                     <span className={`ease-in-out duration-300 block h-[5px] w-[12.5px] rounded-full bg-white ${showMenu ? 'translate-x-[1px] translate-y-[1px] rotate-[45deg]' : 'my-1'}`}></span>
                     <span className={`ease-in-out duration-300 block h-[5px] w-[25px] rounded-full bg-white ${showMenu ? 'rotate-[-45deg]' : 'my-1'}`}></span>
                     <span className={`ease-in-out duration-300 block h-[5px] w-[12.5px] rounded-full bg-white translate-x-[10px] ${showMenu ? "translate-y-[-1px] rotate-[45deg]" : 'my-1'}`}></span>
                 </div>
             </div>
-            <div className={`h-auto w-full md:hidden`}>
-                <ul className={`ease-in-out duration-300 overflow-hidden px-5 bg-white flex flex-col justify-evenly ${showMenu ? "h-[300px] " : "h-0"}`}>
+            {/* MOBILE HAMBURGER MENU */}
+            <div className={`h-auto w-full md:hidden bg-white overflow-hidden`}>
+                <ul className={`ease-in-out duration-300 overflow-hidden flex flex-col justify-evenly ${showMenu ? "h-[350px]" : "h-0"}`}>
                     <li className='text-primaryTextColor mx-2 my-3 uppercase text-xl font-bold'>About</li>
                     <li className='text-primaryTextColor mx-2 my-3 uppercase text-xl font-bold'>Menu</li>
                     <li className='text-primaryTextColor mx-2 my-3 uppercase text-xl font-bold'>Mega Menu</li>
