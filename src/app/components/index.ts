@@ -14,8 +14,8 @@ import ProtectedPageProvider from "./ProtectedPageProvider";
 import LoginButton from "./Buttons/LoginButton";
 import InputText from "./Input/InputText";
 import UserRegisterForm from "./Forms/UserRegisterForm";
-import Navbar from "./navigations/Navbar";
-import Footer from "./footer/Footer";
+import Navbar from "./Navigations/Navbar";
+import Footer from "./Footer/Footer";
 import ProductCard from "./Cards/ProductCard";
 import ProductMenu1 from "./Menus/ProductMenu1";
 import Ratings from "./Ratings"
